@@ -51,7 +51,7 @@ yii migrate/up
 Config
 ------------
 
-Add module MediaManage to your `AppConfig` file.
+Add module FavoriteManage to your `AppConfig` file.
 
 ```php
 ...
@@ -77,3 +77,8 @@ Functions
 ------------
 
 [Core](https://github.com/thienhungho/yii2-favorites/tree/master/src/functions/core.php)
+
+Models
+------------
+
+[Favorite](https://github.com/thienhungho/yii2-favorites/tree/master/src/models/Favorite.php)

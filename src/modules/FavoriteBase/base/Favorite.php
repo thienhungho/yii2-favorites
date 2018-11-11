@@ -84,10 +84,10 @@ class Favorite extends \yii\db\ActiveRecord
 
     /**
      * @inheritdoc
-     * @return \thienhungho\Favorites\modules\FavoriteBase\FavoriteQuery the active query used by this AR class.
+     * @return \thienhungho\Favorites\modules\FavoriteBase\query\FavoriteQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \thienhungho\Favorites\modules\FavoriteBase\FavoriteQuery(get_called_class());
+        return new \thienhungho\Favorites\modules\FavoriteBase\query\FavoriteQuery(get_called_class());
     }
 }

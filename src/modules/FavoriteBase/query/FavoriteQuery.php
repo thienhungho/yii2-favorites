@@ -1,6 +1,6 @@
 <?php
 
-namespace thienhungho\Favorites\modules\FavoriteBase;
+namespace thienhungho\Favorites\modules\FavoriteBase\query;
 
 /**
  * This is the ActiveQuery class for [[Favorite]].
