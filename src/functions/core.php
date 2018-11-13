@@ -9,13 +9,13 @@
 function is_user_created_favorite($obj_type, $obj_id)
 {
     if (is_login()) {
-        return \common\modules\favorites\Favorite::find()
+        return \thienhungho\Favorites\models\Favorite::find()
             ->where(['obj_type' => $obj_type])
             ->andWhere(['obj_id' => $obj_id])
             ->andWhere(['created_by' => get_current_user_id()])
             ->exists();
     } else {
-        return \common\modules\favorites\Favorite::find()
+        return \thienhungho\Favorites\models\Favorite::find()
             ->where(['obj_type' => $obj_type])
             ->andWhere(['obj_id' => $obj_id])
             ->andWhere(['ip' => get_current_user_ip()])
@@ -31,7 +31,7 @@ function is_user_created_favorite($obj_type, $obj_id)
  */
 function create_favorite($obj_type, $obj_id)
 {
-    $favorite = new \common\modules\favorites\Favorite([
+    $favorite = new \thienhungho\Favorites\models\Favorite([
         'obj_type' => $obj_type,
         'obj_id' => $obj_id,
         'ip' => get_current_user_ip(),
@@ -63,7 +63,7 @@ function delete_favorite($obj_type, $obj_id)
 {
     if (is_login()) {
         if (is_user_created_favorite($obj_type, $obj_id)) {
-            return \common\modules\favorites\Favorite::deleteAll([
+            return \thienhungho\Favorites\models\Favorite::deleteAll([
                 'obj_type' => $obj_type,
                 'obj_id' => $obj_id,
                 'created_by' => get_current_user_id(),
@@ -73,7 +73,7 @@ function delete_favorite($obj_type, $obj_id)
         }
     } else {
         if (is_user_created_favorite($obj_type, $obj_id)) {
-            return \common\modules\favorites\Favorite::deleteAll([
+            return \thienhungho\Favorites\models\Favorite::deleteAll([
                 'obj_type' => $obj_type,
                 'obj_id' => $obj_id,
                 'ip' => get_current_user_ip(),
@@ -92,7 +92,7 @@ function delete_favorite($obj_type, $obj_id)
  */
 function delete_all_favorites($obj_type, $obj_id)
 {
-    return \common\modules\favorites\Favorite::deleteAll([
+    return \thienhungho\Favorites\models\Favorite::deleteAll([
         'obj_type' => $obj_type,
         'obj_id' => $obj_id
     ]);
@@ -106,7 +106,7 @@ function delete_all_favorites($obj_type, $obj_id)
  */
 function count_all_favorites($obj_type, $obj_id)
 {
-    return \common\modules\favorites\Favorite::find()
+    return \thienhungho\Favorites\models\Favorite::find()
         ->where(['obj_type' => $obj_type])
         ->andWhere(['obj_id' => $obj_id])
         ->count();
