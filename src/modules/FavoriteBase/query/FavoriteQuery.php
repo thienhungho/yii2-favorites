@@ -7,7 +7,7 @@ namespace thienhungho\Favorites\modules\FavoriteBase\query;
  *
  * @see Favorite
  */
-class FavoriteQuery extends \yii\db\ActiveQuery
+class FavoriteQuery extends \thienhungho\ActiveQuery\models\ActiveQuery
 {
     /*public function active()
     {
